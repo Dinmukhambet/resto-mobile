@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+    pages = [
+        {
+            title: 'Main',
+            url: '/home/profile',
+            icon: 'home'
+        },
+        {
+            title: 'Reviews',
+            url: '/home/reviews',
+            icon: 'home'
+        }
+    ];
 }

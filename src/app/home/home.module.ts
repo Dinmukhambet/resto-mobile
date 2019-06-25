@@ -22,7 +22,10 @@ import {HomePage} from './home.page';
                 component: HomePage,
                 children: [
                     {path: 'reviews', loadChildren: './reviews/reviews.module#ReviewsPageModule'},
-                    { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' }
+                    { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+                    { path: 'contacts', loadChildren: './contacts/contacts.module#ContactsPageModule' },
+                    { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' }
+
                 ]
             }
         ])

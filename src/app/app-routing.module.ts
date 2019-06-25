@@ -7,10 +7,11 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
-  // { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
-  // { path: 'reviews', loadChildren: './reviews/reviews.module#ReviewsPageModule' },
-  //   {path: 'home', loadChildren: './home/home.module#HomePageModule'},
-  //   {path: 'reviews', loadChildren: './reviews/reviews.module#ReviewsPageModule'}
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+  { path: 'reviews', loadChildren: './reviews/reviews.module#ReviewsPageModule' },
+  { path: 'contacts', loadChildren: './contacts/contacts.module#ContactsPageModule' },
+  { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' }
+
 ];
 
 @NgModule({

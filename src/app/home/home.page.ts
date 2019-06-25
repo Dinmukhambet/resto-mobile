@@ -9,14 +9,24 @@ export class HomePage {
 
     pages = [
         {
-            title: 'Main',
+            title: 'Profile',
             url: '/home/profile',
-            icon: 'home'
+            icon: 'person'
         },
         {
             title: 'Reviews',
             url: '/home/reviews',
-            icon: 'home'
+            icon: 'chatbubbles'
+        },
+        {
+            title: 'Contacts',
+            url: '/home/contacts',
+            icon: 'contacts'
+        },
+        {
+            title: 'Menu',
+            url: '/home/menu',
+            icon: 'paper'
         }
     ];
 }

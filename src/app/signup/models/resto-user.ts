@@ -1,8 +1,11 @@
 export class RestoUser {
+
     constructor() {
     }
 
-    login = 'a';
-    password = 'a';
-    email = 'a';
+    login: string;
+    fullName: string;
+    password: string;
+    email: string;
+    status: string | 'user';
 }

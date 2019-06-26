@@ -19,14 +19,14 @@ export class HomePage {
             icon: 'chatbubbles'
         },
         {
-            title: 'Contacts',
-            url: '/home/contacts',
-            icon: 'contacts'
-        },
-        {
             title: 'Menu',
             url: '/home/menu',
             icon: 'paper'
+        },
+        {
+            title: 'About us',
+            url: '/home/contacts',
+            icon: 'contacts'
         }
     ];
 }

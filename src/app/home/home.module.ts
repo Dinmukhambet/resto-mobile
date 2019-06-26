@@ -21,10 +21,10 @@ import {HomePage} from './home.page';
                 path: '',
                 component: HomePage,
                 children: [
+                    {path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule'},
                     {path: 'reviews', loadChildren: './reviews/reviews.module#ReviewsPageModule'},
-                    { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
-                    { path: 'contacts', loadChildren: './contacts/contacts.module#ContactsPageModule' },
-                    { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' }
+                    {path: 'contacts', loadChildren: './contacts/contacts.module#ContactsPageModule'},
+                    {path: 'menu', loadChildren: './menu/menu.module#MenuPageModule'}
 
                 ]
             }

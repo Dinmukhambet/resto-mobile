@@ -10,7 +10,13 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {SignupService} from './signup/service/signup.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HttpInterceptor} from './http.interceptor';
+import {AuthService} from './auth/service/auth.service';
+import {MenuService} from './menu/service/menu.service';
+import {ReviewsService} from './reviews/service/reviews.service';
+
+export const LOCAL_ADDRESS = 'http://localhost:8080';
 
 @NgModule({
     declarations: [AppComponent],
@@ -20,7 +26,8 @@ import {HttpClientModule} from '@angular/common/http';
         StatusBar,
         SplashScreen,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
-        SignupService
+        {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor, multi: true},
+        SignupService, AuthService, MenuService, ReviewsService
     ],
     bootstrap: [AppComponent]
 })

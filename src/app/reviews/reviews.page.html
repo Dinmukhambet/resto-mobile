@@ -1,12 +1,31 @@
 <ion-header>
-  <ion-toolbar color="primary">
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-    <ion-title>Reviews</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Reviews</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-<h2>hello rev</h2>
+<ion-content>
+    <ion-item>
+        <ion-label position="floating">Review</ion-label>
+        <ion-input [(ngModel)]="review.text"></ion-input>
+    </ion-item>
+    <!--    <ion-button color="primary" (click)="saveReview()">Send review</ion-button>-->
+    <ion-button expand="full" fill="outline" (click)="saveReview()" [disabled]="review.text.length == 0">
+        Send review
+    </ion-button>
+
+    <div *ngIf="reviews && reviews.length > 0">
+        <ion-card *ngFor="let review of reviews">
+            <ion-card-header>
+                <ion-card-title>{{review.user.fullName}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                {{review.text}}
+            </ion-card-content>
+        </ion-card>
+    </div>
+
 </ion-content>

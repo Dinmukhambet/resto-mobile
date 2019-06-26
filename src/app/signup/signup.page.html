@@ -1,22 +1,62 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>signup</ion-title>
+        <ion-title>Registration</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-item>
-        <ion-label position="fixed">Login</ion-label>
-        <ion-input type="text" [(ngModel)]="user.login"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="fixed">Email</ion-label>
-        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="fixed">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-    </ion-item>
-    <br>
-    <ion-button color="primary" shape="round" (click)="saveUser()">Sign Up</ion-button>
+    <form [formGroup]="group">
+        <ion-item>
+            <ion-label position="fixed">Full name</ion-label>
+            <ion-input type="text" formControlName="fullName" [(ngModel)]="user.fullName"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="group.get('fullName').hasError('required') && group.get('fullName').touched">
+            <div class="error" *ngIf="group.get('fullName').hasError('required') && group.get('fullName').touched">
+                Full name is required
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Login</ion-label>
+            <ion-input type="text" formControlName="login" [(ngModel)]="user.login"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="group.get('login').hasError('required') && group.get('login').touched">
+            <div class="error">
+                Login is required
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="fixed">Email</ion-label>
+            <ion-input type="email" formControlName="email" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="(group.get('email').hasError('required') || group.get('email').hasError('email') ) && group.get('email').touched">
+            <div class="error" *ngIf="group.get('email').hasError('email') && group.get('email').touched">
+                Please enter valid email
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed">Password</ion-label>
+            <ion-input type="password" formControlName="pass" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+            <div class="error" *ngIf="group.get('pass').hasError('required') && group.get('pass').touched">
+                Password is required
+            </div>
+            <div class="error" *ngIf="group.get('pass').hasError('minlength') && group.get('pass').touched">
+                Password must be at least 6 characters long.
+            </div>
+        </ion-item>
+        <br>
+        <div text-center>
+            <ion-button color="primary" shape="round" [disabled]="group.invalid" (click)="saveUser()">Create your account
+            </ion-button>
+        </div>
+        <ion-item lines="none" text-center [hidden]="!showErrorMsg">
+            <ion-text color="danger">Login is already used</ion-text>
+        </ion-item>
+    </form>
+
 </ion-content>

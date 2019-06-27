@@ -10,7 +10,11 @@ const routes: Routes = [
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'reviews', loadChildren: './reviews/reviews.module#ReviewsPageModule' },
   { path: 'contacts', loadChildren: './contacts/contacts.module#ContactsPageModule' },
-  { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' }
+  { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
+  { path: 'table-order', loadChildren: './table-order/table-order.module#TableOrderPageModule' },
+  { path: 'menu-order', loadChildren: './menu-order/menu-order.module#MenuOrderPageModule' }
+
+
 
 ];
 

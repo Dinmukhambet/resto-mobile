@@ -15,13 +15,10 @@ export class ProfilePage implements OnInit {
     }
 
     ngOnInit() {
-        this.route.queryParams.subscribe(params => {
-            if (params && params.user) {
-                this.user = JSON.parse(params.user);
-                console.log(this.user);
-                localStorage.setItem('user', JSON.stringify(this.user));
-            }
-        });
+
+        this.user = JSON.parse(localStorage.getItem('user'));
+        console.log(this.user);
+
     }
 
 }

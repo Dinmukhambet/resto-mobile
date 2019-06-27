@@ -32,7 +32,8 @@ export class AuthPage implements OnInit {
             this.user = response['user'];
             console.log(this.message === 'signed_user');
             if (this.message === 'signed_user') {
-                this.router.navigate(['/home/profile'], {queryParams: {user: JSON.stringify(this.user)}});
+                this.router.navigate(['/home/profile']);
+                localStorage.setItem('user',JSON.stringify(this.user));
             }
         });
     }

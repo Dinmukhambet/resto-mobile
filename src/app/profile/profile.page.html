@@ -23,9 +23,23 @@
         </ion-card-header>
 
         <ion-card-content>
-            <ion-item>
+            <ion-item lines="none">
                 <ion-label text-center>email: {{user.email}}</ion-label>
             </ion-item>
+            <div *ngIf="user.status == 'admin'">
+                Administrative Assistant with 5+ years of experience preparing flawless presentations, assembling facility reports,
+                and maintaining the utmost confidentiality.  Possesses a B.A. in History and expertise in Microsoft Excel.
+                Looking to leverage my knowledge and experience into a role as Project Manager.
+                <br>
+                <b>ADMINISTRATIVE ASSISTANT</b>
+                <br>
+                Redford & Sons, Boston, MA / September 2016 – August 2018
+                •	Scheduled and coordinated meetings, appointments, and travel arrangements for supervisors and managers
+                •	Trained 2 administrative assistants during a period of company expansion, ensuring that they pay explicit attention to company policies and minute details
+                •	Developed new filing and organizational practices, saving the company $3,000 per year in contracted labor expenses
+                •	Maintained utmost discretion when dealing with sensitive topics
+                •	Managed travel and expense reports for department team members
+            </div>
         </ion-card-content>
     </ion-card>
 
